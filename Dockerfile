@@ -16,4 +16,4 @@ COPY . .
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 RUN composer install --no-cache --no-interaction
 
-ENTRYPOINT ["/bin/ash"]
+ENTRYPOINT ["vendor/bin/phpunit"]
