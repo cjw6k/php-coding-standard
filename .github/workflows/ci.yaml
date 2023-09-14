@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+  schedule:
+    - cron: "17 3 * * *"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Run the tests
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: build image
+        run: |
+          docker build -t cjw6k/php-coding-standard -f Dockerfile .
+
+      - name: test
+        run: |
+          docker run --rm cjw6k/php-coding-standard
