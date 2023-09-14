@@ -1,5 +1,7 @@
 .git/
+.github/
 vendor/
 .dockerignore
+.gitattributes
 .gitignore
 Dockerfile
