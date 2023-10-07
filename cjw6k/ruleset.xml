@@ -99,6 +99,7 @@
     <rule ref="SlevomatCodingStandard.ControlStructures.EarlyExit">
         <properties>
             <property name="ignoreStandaloneIfInScope" value="true"/>
+            <property name="ignoreTrailingIfWithOneInstruction" value="true"/>
         </properties>
     </rule>
     <rule ref="SlevomatCodingStandard.ControlStructures.JumpStatementsSpacing">
