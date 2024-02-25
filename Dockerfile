@@ -14,6 +14,6 @@ WORKDIR /opt/phpcs
 COPY . .
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-RUN composer install --no-cache --no-interaction
+RUN COMPOSER_ALLOW_SUPERUSER=1 composer install --no-cache --no-interaction
 
 ENTRYPOINT ["vendor/bin/phpunit"]
