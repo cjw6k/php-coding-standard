@@ -1,9 +1,12 @@
 .git/
 .github/
 .idea/
+.taskfiles/
+vendor-bin/*/vendor/
 vendor/
 .dockerignore
 .gitattributes
 .gitignore
 .pre-commit-config.yaml
 Dockerfile
+Taskfile.yml
