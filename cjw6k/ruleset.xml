@@ -20,6 +20,7 @@
     <rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma"/>
 
     <rule ref="SlevomatCodingStandard.Attributes.AttributeAndTargetSpacing"/>
+    <rule ref="SlevomatCodingStandard.Attributes.DisallowAttributesJoining"/>
 
     <rule ref="SlevomatCodingStandard.Classes.ClassMemberSpacing"/>
     <rule ref="SlevomatCodingStandard.Classes.ClassStructure">
