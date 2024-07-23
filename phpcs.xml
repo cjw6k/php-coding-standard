@@ -1,14 +1,4 @@
 <?xml version="1.0"?>
-<ruleset name="skeif">
+<ruleset name="bootstrap">
     <rule ref="cjw6k"/>
-
-    <rule ref="Generic.CodeAnalysis.UselessOverridingMethod">
-        <!-- Thes are shims so that Dice auto-wiring works -->
-        <exclude-pattern>src/Extensions/Monolog/Handler/StreamHandler.php</exclude-pattern>
-    </rule>
-
-    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingAnyTypeHint">
-        <!-- These are shims so that Dice auto-wiring works -->
-        <exclude-pattern>src/Extensions/Monolog/Handler/StreamHandler.php</exclude-pattern>
-    </rule>
 </ruleset>
