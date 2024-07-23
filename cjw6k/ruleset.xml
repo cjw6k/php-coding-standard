@@ -150,6 +150,7 @@
             <property name="maxLinesLength" value="34"/>
         </properties>
     </rule>
+    <rule ref="SlevomatCodingStandard.Functions.NamedArgumentSpacing"/>
     <rule ref="SlevomatCodingStandard.Functions.RequireArrowFunction"/>
     <rule ref="SlevomatCodingStandard.Functions.RequireSingleLineCall"/>
     <rule ref="SlevomatCodingStandard.Functions.StaticClosure"/>
