@@ -4,28 +4,25 @@ namespace Tests;
 
 use DirectoryIterator;
 use Generator;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 use function dirname;
 use function json_decode;
+use function ksort;
 use function print_r;
 use function shell_exec;
 
 class RuleTest extends TestCase
 {
-    /**
-     * @test
-     * @dataProvider allActiveRules
-     */
+    #[Test]
+    #[DataProvider('allActiveRules')]
     public function it_sniffs_out_the_not_good_code(string $rule, string $path): void
     {
         $resultJson = shell_exec(__DIR__ . "/../vendor/bin/phpcs --standard=cjw6k/ruleset.xml --report=json $path");
         $result = json_decode($resultJson);
-        $this->assertGreaterThan(
-            0,
-            $result->totals->errors + $result->totals->warnings,
-            'the rule did not report'
-        );
+        $this->assertGreaterThan(0, $result->totals->errors + $result->totals->warnings, 'the rule did not report');
 
         foreach ($result->files->$path->messages as $message) {
             $this->assertStringStartsWith(
@@ -41,6 +38,7 @@ class RuleTest extends TestCase
         $dir = new DirectoryIterator(dirname(__FILE__) . '/Fixtures');
 
         $data = [];
+
         foreach ($dir as $fileInfo) {
             if (
                 $fileInfo->isDot()

@@ -15,7 +15,7 @@ jobs:
 
       - name: build image
         run: |
-          docker build -t cjw6k/php-coding-standard -f Dockerfile .
+          docker build -t cjw6k/php-coding-standard -f Dockerfile . --target test
 
       - name: test
         run: |

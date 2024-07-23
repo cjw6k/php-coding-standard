@@ -14,7 +14,7 @@ repos:
   - repo: https://github.com/zricethezav/gitleaks
     rev: v8.18.4
     hooks:
-      - id: gitleaks-docker
+      - id: gitleaks
 
   - repo: https://github.com/rhysd/actionlint
     rev: v1.7.1
@@ -30,6 +30,5 @@ ci:
   autofix_commit_msg: "⚙ auto fixes [pre-commit.ci]"
   autoupdate_commit_msg: "⚙ auto updates [pre-commit.ci]"
   skip:
-    - gitleaks-docker
     - actionlint-docker
     - hadolint-docker
