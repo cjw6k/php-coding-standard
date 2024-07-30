@@ -38,6 +38,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Validate composer config
+        run: composer validate --no-check-all --strict
+
       - name: Run composer install
         run: composer install --no-interaction
 
