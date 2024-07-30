@@ -21,7 +21,7 @@ jobs:
         run: |
           docker run --rm cjw6k/php-coding-standard
 
-  matrix-test:
+  matrix-dev-test:
     strategy:
       matrix:
         php: [8.2, 8.3]
@@ -46,3 +46,30 @@ jobs:
 
       - name: Run tests
         run: composer test
+
+  matrix-usage-test:
+    strategy:
+      matrix:
+        php: [7.2, 7.3, 7.4, 8.0, 8.1, 8.2, 8.3]
+        deps: [lowest, highest]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+          extensions: none, ctype, dom, mbstring, simplexml, tokenizer, xmlwriter, xml
+          tools: composer
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run composer install
+        uses: ramsey/composer-install@v3
+        with:
+          composer-options: --no-dev
+          dependency-versions: ${{ matrix.deps }}
+
+      - name: Verify standard is installed
+        run: vendor/bin/phpcs -i | grep -q cjw6k
