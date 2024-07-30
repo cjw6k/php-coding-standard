@@ -47,7 +47,7 @@
     },
     "scripts": {
         "phpcs": [
-            "vendor-bin/phpcs/vendor/bin/phpcs -ps --parallel=$(nproc) --colors tests/RuleTest.php"
+            "vendor/bin/phpcs -ps --parallel=$(nproc) --colors tests/RuleTest.php"
         ],
         "phpunit": [
             "vendor-bin/phpunit/vendor/bin/phpunit"
