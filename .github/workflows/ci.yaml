@@ -6,9 +6,9 @@ on:
     - cron: "17 3 * * *"
 
 jobs:
-  test:
+  dev-test:
     runs-on: ubuntu-latest
-    name: Run the tests
+    name: Run the tests from the Dockerfile
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -20,3 +20,25 @@ jobs:
       - name: test
         run: |
           docker run --rm cjw6k/php-coding-standard
+
+  matrix-test:
+    strategy:
+      matrix:
+        php: [8.0, 8.1, 8.2, 8.3, 8.4]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+          tools: composer
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run composer install
+        run: composer install --no-interaction
+
+      - name: Run tests
+        run: composer test
