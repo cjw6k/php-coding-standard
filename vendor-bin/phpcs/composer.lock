@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "037691f2bf4737ee13924ea98a6af116",
+    "content-hash": "69f887106c8e20c5e432a921aa389510",
     "packages": [],
     "packages-dev": [
         {
             "name": "cjw6k/php-coding-standard",
-            "version": "0.3.0",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cjw6k/php-coding-standard.git",
-                "reference": "2ed2f7a629f94df968f296dfa06d16eeb173e901"
+                "reference": "01d43816d6d19f083df2c619ff1c0d377d403327"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cjw6k/php-coding-standard/zipball/2ed2f7a629f94df968f296dfa06d16eeb173e901",
-                "reference": "2ed2f7a629f94df968f296dfa06d16eeb173e901",
+                "url": "https://api.github.com/repos/cjw6k/php-coding-standard/zipball/01d43816d6d19f083df2c619ff1c0d377d403327",
+                "reference": "01d43816d6d19f083df2c619ff1c0d377d403327",
                 "shasum": ""
             },
             "require": {
@@ -26,11 +26,17 @@
                 "squizlabs/php_codesniffer": "^3.7"
             },
             "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.8",
                 "ergebnis/composer-normalize": "^2.36",
-                "php": "^7 || ^8",
-                "phpunit/phpunit": "^10.3"
+                "php": "^7 || ^8"
             },
             "type": "phpcodesniffer-standard",
+            "extra": {
+                "bamarni-bin": {
+                    "bin-links": false,
+                    "forward-command": true
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Tests\\": "tests/"
@@ -56,9 +62,9 @@
             ],
             "support": {
                 "issues": "https://github.com/cjw6k/php-coding-standard/issues",
-                "source": "https://github.com/cjw6k/php-coding-standard/tree/0.3.0"
+                "source": "https://github.com/cjw6k/php-coding-standard/tree/0.4.0"
             },
-            "time": "2023-10-07T05:10:36+00:00"
+            "time": "2024-07-23T02:51:33+00:00"
         },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
