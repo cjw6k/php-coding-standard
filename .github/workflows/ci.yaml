@@ -42,7 +42,7 @@ jobs:
         run: composer validate --no-check-all --strict
 
       - name: Run composer install
-        run: composer install --no-interaction
+        uses: ramsey/composer-install@v3
 
       - name: Run tests
         run: composer test
