@@ -25,6 +25,7 @@ jobs:
     strategy:
       matrix:
         php: [8.2, 8.3]
+        prefer: ["", "--prefer-lowest --prefer-stable"]
     runs-on: ubuntu-latest
     steps:
       - name: Setup PHP
@@ -38,8 +39,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Validate composer config
+        run: composer validate --no-check-all --strict
+
       - name: Run composer install
-        run: composer install --no-interaction
+        run: composer install --no-interaction ${{ matrix.prefer }}
 
       - name: Run tests
         run: composer test
