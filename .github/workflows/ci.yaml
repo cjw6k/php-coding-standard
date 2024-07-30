@@ -68,7 +68,6 @@ jobs:
       - name: Run composer install
         uses: ramsey/composer-install@v3
         with:
-          composer-options: --no-dev
           dependency-versions: ${{ matrix.deps }}
 
       - name: Verify standard is installed
