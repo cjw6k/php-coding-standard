@@ -62,11 +62,11 @@ jobs:
           extensions: none, ctype, dom, mbstring, simplexml, tokenizer, xmlwriter, xml
           tools: composer
 
-      - name: debug
-        run: which composer
-
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: debug
+        run: which composer
 
       - name: Run composer install
         uses: ramsey/composer-install@v3
