@@ -32,7 +32,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           coverage: none
-          extensions: none, mbstring, simplexml
+          extensions: none, mbstring, simplexml, tokenizer
           tools: composer
 
       - name: Checkout
