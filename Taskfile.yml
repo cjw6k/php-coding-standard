@@ -35,8 +35,8 @@ tasks:
       - |
         docker run --rm -it \
         -v ./composer.json:/opt/phpcs/composer.json \
-        -v ./vendor-bin/phpunit/composer.json:/opt/phpunit/vendor-bin/phpunit/composer.json \
-        -v ./vendor-bin/phpunit/composer.lock:/opt/phpunit/vendor-bin/phpunit/composer.lock \
+        -v ./vendor-bin/phpunit/composer.json:/opt/phpcs/vendor-bin/phpunit/composer.json \
+        -v ./vendor-bin/phpunit/composer.lock:/opt/phpcs/vendor-bin/phpunit/composer.lock \
         -v ./cjw6k:/opt/phpcs/cjw6k \
         -v ./tests:/opt/phpcs/tests \
         -v ./phpcs.xml:/opt/phpcs/phpcs.xml \
