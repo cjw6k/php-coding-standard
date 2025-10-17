@@ -20,7 +20,9 @@ class RuleTest extends TestCase
     #[DataProvider('allActiveRules')]
     public function it_sniffs_out_the_not_good_code(string $rule, string $path): void
     {
-        $resultJson = shell_exec(__DIR__ . "/../vendor/bin/phpcs --standard=cjw6k/ruleset.xml --report=json $path");
+        $resultJson = shell_exec(
+            __DIR__ . "/../vendor/bin/phpcs --standard=cjw6k/ruleset.xml --report=json $path 2>/dev/null"
+        );
         $result = json_decode($resultJson);
         $this->assertGreaterThan(0, $result->totals->errors + $result->totals->warnings, 'the rule did not report');
 
